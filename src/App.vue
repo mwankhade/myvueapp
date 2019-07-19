@@ -1,9 +1,14 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+      <div class="navbar_menu">
+          <router-link class="navbar_menu-item" to="/">Home</router-link>
+          <router-link class="navbar_menu-item" to="/about">About</router-link>
+          <router-link class="navbar_menu-item" to="/activityFeed">Activity Feed</router-link>
+          <router-link class="navbar_menu-item" to="/leaderboard">Leaderboard</router-link>
+          <router-link class="navbar_menu-item" to="/myProfile">My Profile</router-link>
+        </div>
+      </div>
     <router-view />
   </div>
 </template>
@@ -17,15 +22,35 @@
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
+  background: #18181a;
+  height: 100%;
+  max-height: 100%;
+  position: fixed;
+  width: 15%;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #b4b4be;
+  text-decoration: none;
+  display: block;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #fff;
+}
+
+.navbar_menu{
+  line-height: 50px;
+}
+
+.navbar_menu-item {
+  cursor: pointer;
+  display: inline-block;
+  font-family: Montserrat, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  margin: 0 0 0 25px;
+  text-transform: uppercase;
 }
 </style>
